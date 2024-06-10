@@ -12,4 +12,4 @@ Assuming you have `rustup` and the `nightly` toolchain installed, you can just c
   - `git clone git@github.com:ellcs/leptos-katex.git`
   - `trunk serve --port 1337 --release --open`
 
-You can omit the `--release` flag, but I like to see smaller artifacts and the project is not that big that you have long compile times.
+You can omit the `--release` flag, by doing so you increase the size of the WASM file.
