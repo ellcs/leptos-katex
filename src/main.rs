@@ -48,44 +48,47 @@ fn main() {
         write_txt(String::from("E = mc^2"));
     };
 
+    let maxwell = move |_| {
+        write_txt(String::from(MAXWELL));
+    };
+
     mount_to_body(move || {
         view! { 
-            <h1 class="text-3xl font-bold">Simple KaTeX demo using Leptos (Rust) only</h1>
-            <div class="grid gap-6 mb-5 md:grid-cols-1">
-            <p>
-            This page has been created, without writing a single line of JavaScript, 
-            but just Rust using Leptos. There is auto-generated JavaScript as glue code
-            (wasm-bindgen). If this seems interesting to you, I can highly
-            recommend reading the <a href="https://book.leptos.dev/">Leptos documentation</a>.
-            The <a href="https://github.com/ellcs/leptos-katex/blob/master/src/main.rs">source code of this page</a> is also fairly easy. In release mode            less than 0.6 MiB
-            data is transfered. This includes just two files: JavaScript glue code and the wasm
-            file. He a look in your developer tools.
-            </p> 
-            <br/>
-            <br/>
-            <br/>
-            <div inner_html=render_input/>
-            <br/>
-            <br/>
-            <br/>
-            <textarea
-              class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-              on:input=move |ev| {
-                  write_txt(event_target_value(&ev))
-              }
-              prop:value=read_txt
-              rows=count_rows
-            />
-            <div class="md:grid-cols-2 flex space-x-4 gap-3">
-              <button 
-                class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
-                on:click=einstein>One stone.
-              </button>
-              <button 
-                class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
-                on:click=einstein>One stone.
-              </button>
-            </div>
+            <div class="mx-4">
+              <h1 class="text-3xl font-bold">Simple KaTeX demo using Leptos (Rust) only</h1>
+              <div class="grid gap-6 mb-5 grid-cols-1">
+                <br/>
+                <p class="gap-5" inner_html=render_input/>
+                <textarea
+                  class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                  on:input=move |ev| {
+                      write_txt(event_target_value(&ev))
+                  }
+                  prop:value=read_txt
+                  rows=count_rows
+                />
+                <div class="grid-cols-2 flex space-x-4 gap-3">
+                  <button 
+                    class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+                    on:click=einstein>
+                    General Relativity
+                  </button>
+                  <button 
+                    class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+                    on:click=maxwell>
+                    Maxwell
+                  </button>
+                </div>
+              </div>
+              <p>
+              This page has been created, without writing a single line of JavaScript, 
+              but just Rust using Leptos. There is auto-generated JavaScript as glue code
+              (wasm-bindgen). If this seems interesting to you, I can highly
+              recommend reading the <a href="https://book.leptos.dev/">Leptos documentation</a>.
+              The <a href="https://github.com/ellcs/leptos-katex/blob/master/src/main.rs">source code of this page</a> is also fairly easy. In release mode            less than 0.6 MiB
+              data is transfered. This includes just two files: JavaScript glue code and the wasm
+              file. Have a look in your developer tools (F12).
+              </p> 
             </div>
         }
     })
