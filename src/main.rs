@@ -44,7 +44,7 @@ fn main() {
             <div style="width: 95%; margin-left: auto; margin-right: auto;">
             This page has been created, without writing a single line of JavaScript, 
             but just Rust using Leptos. There is auto-generated JavaScript as glue code (wasm-bindgen).             If this seems interesting to you, I can highly recommend reading the 
-            <a href="url">Leptos documentation</a>. The source code is also fairly easy. In release mode            less than 0.6 MiB data is transfered, two files: The JavaScript glue code and the wasm file.
+            <a href="url">Leptos documentation</a>. The source code is also fairly easy. In release mode            less than 0.6 MiB data is transfered. This includes just two files: JavaScript glue code and the wasm file. He a look in your developer tools.
             </div> 
             <br/>
             <br/>
