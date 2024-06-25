@@ -55,7 +55,8 @@ fn main() {
     mount_to_body(move || {
         view! { 
             <div class="mx-4">
-              <h1 class="text-3xl font-bold">Simple KaTeX demo using Leptos (Rust) only</h1>
+              <h1 class="mb-4 text-4xl font-extrabold leading-none tracking-tight text-gray-900 md:text-5xl lg:text-6xl dark:text-white">Leptos KaTeX demo</h1>
+              <p class="my-4 text-lg text-gray-500">No JavaScript at all!</p>
               <div class="grid gap-6 mb-5 grid-cols-1">
                 <br/>
                 <p class="gap-5" inner_html=render_input/>
