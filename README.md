@@ -2,7 +2,7 @@
 
 This project is a simple experiment on how to render tex formulas on a website without using a single line of javascript. I used leptos for client site rendering and a KaTeX crate. These two projects combined offer a simple, but elegant way to render formulas.
 
-Check out the fairly [simple demo page](https://ellcs.github.io/leptos-katex)!
+Check out the fairly [simple result](https://ellcs.github.io/leptos-katex)!
 
 ## Setup
 
